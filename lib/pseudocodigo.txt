@@ -1,0 +1,16 @@
+jogador pressiona uma carta C1
+conteúdo K1 de C1 é revelado
+
+jogador pressiona uma carta C2
+conteúdo K1 de C2 é revelado
+
+se K1 == K2:
+    C1 e C2 permanecem com a face virada para cima até o fim do jogador
+    #(pares revelados) é incrementado
+senao:
+    C1 e C2 tem suas faces viradas para baixo novamente 
+
+se #(pares revelados) == 10:
+    fim do jogo
+senão:
+    volta para o passo 1
