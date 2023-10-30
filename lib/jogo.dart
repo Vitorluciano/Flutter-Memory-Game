@@ -28,16 +28,16 @@ class _JogoState extends State<Jogo> {
     if (args.modo == "número") {
 
       for (int i = 0; i < 10; i++) {
-        baralho.add(Carta(tipo: "número", conteudo: numeros[i]));
-        baralho.add(Carta(tipo: "número", conteudo: numeros[i]));
+        baralho.add(Carta(tipo: "número", conteudo: numeros[i], verso: const Text("")));
+        baralho.add(Carta(tipo: "número", conteudo: numeros[i], verso: const Text("")));
       }
 
       baralho.shuffle();
     } else if (args.modo == "imagem") {
 
       for (int i = 0; i < 10; i++) {
-        baralho.add(Carta(tipo: "imagem", conteudo: "images/${imagens[i]}.png"));
-        baralho.add(Carta(tipo: "imagem", conteudo: "images/${imagens[i]}.png"));
+        baralho.add(Carta(tipo: "imagem", conteudo: "images/${imagens[i]}.png", verso: const Text("")));
+        baralho.add(Carta(tipo: "imagem", conteudo: "images/${imagens[i]}.png", verso: const Text("")));
       }
 
       baralho.shuffle();
@@ -46,13 +46,13 @@ class _JogoState extends State<Jogo> {
         imagens.shuffle();
 
         for (int i = 0; i < 5; i++) {
-          baralho.add(Carta(tipo: "número", conteudo: numeros[i]));
-          baralho.add(Carta(tipo: "número", conteudo: numeros[i]));
+          baralho.add(Carta(tipo: "número", conteudo: numeros[i], verso: const Text("")));
+          baralho.add(Carta(tipo: "número", conteudo: numeros[i], verso: const Text("")));
         }
 
         for (int i = 0; i < 5; i++) {
-          baralho.add(Carta(tipo: "imagem", conteudo: "images/${imagens[i]}.png"));
-          baralho.add(Carta(tipo: "imagem", conteudo: "images/${imagens[i]}.png"));
+          baralho.add(Carta(tipo: "imagem", conteudo: "images/${imagens[i]}.png", verso: const Text("")));
+          baralho.add(Carta(tipo: "imagem", conteudo: "images/${imagens[i]}.png", verso: const Text("")));
 
         }
 

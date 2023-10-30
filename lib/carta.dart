@@ -3,11 +3,10 @@ import 'package:flutter/material.dart';
 class Carta extends StatefulWidget {
   final String tipo;
   final String conteudo;
-  static const String verso = "";
+  final Widget verso;
 
-  const Carta({super.key, required this.conteudo, required this.tipo});
+  const Carta({super.key, required this.conteudo, required this.tipo, required this.verso});
 
-  
 
   @override
   State<Carta> createState() => _CartaState();
@@ -16,7 +15,7 @@ class Carta extends StatefulWidget {
 class _CartaState extends State<Carta> {
   bool revelada = false;
   bool bloqueada = false;
-  String faceCima = Carta.verso;
+  Widget faceCima = const Text("");
 
   @override
   Widget build(BuildContext context) {
@@ -25,15 +24,15 @@ class _CartaState extends State<Carta> {
         child: Container(
           margin: const EdgeInsets.all(8.0),
           color: Colors.lightBlueAccent,
-          child: Center(child: Text(faceCima)),
+          child: Center(child: faceCima),
         ),
         onTap: () {
           if (!bloqueada) {
             setState(() {
               if (!revelada) {
-                faceCima = widget.conteudo;
+                faceCima = Text(widget.conteudo);
               } else if (revelada) {
-                faceCima = Carta.verso;
+                faceCima = const Text("");
               }
               revelada = !revelada;
             }
@@ -48,16 +47,16 @@ class _CartaState extends State<Carta> {
           color: Colors.lightBlueAccent,
           child: FittedBox(
             fit: BoxFit.fill,
-            child: Image.asset(faceCima)
+            child: faceCima
           ),
         ),
         onTap: () {
           if (!bloqueada) {
             setState(() {
               if (!revelada) {
-                faceCima = widget.conteudo;
+                faceCima = Image.asset(widget.conteudo);
               } else if (revelada) {
-                faceCima = Carta.verso;
+                faceCima = const Text("");
               }
               revelada = !revelada;
             }
